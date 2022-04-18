@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="./index_files/theme.css">
+</style>
+<title> Spike Sorting </title>
+</head>
+
+<body>
+<br>
+<a href=../index.html > Home: Mini Project 3 </a>	
+<br>
+
+<h1> Results 2 </h1>
+<h2> hc-1, data from four experiments </h2>
+Four experiments, spike waveforms recorded on four channels per intracellular spike times (GT = ground truth).<br>
+All waveform plots in the same row belong to the same experiment and class.
+<list>
+<li> Class 1: d533101.dat 
+<li> Class 2: d561103.dat 
+<li> Class 3: d611107.dat
+<li> Class 4: d1453103.dat
+</list>
+<br>
+Although these class 3 and 4 waveforms are not distinguishable to the human eye, <br>
+the neural network appears to do a surprisingly good job of classifying them in a  <br>
+test set after being trained on examples, but in reality this training set is biased<br>
+by the number examples in class 3 (243 per channel) versus class 4 (1636 per channel).  
+<br>
+
+<img src=./four-experiments-NN.jpg > <img src=./four-experiments-confusion.jpg >
+
+
+<br>
+<hr>
+Using NN with 10 artificial neurons to classify extracelluar spike waveforms from biological neurons.
+<list>
+<li> Class 1: d533101.dat 
+<li> Class 2: d561103.dat 
+<li> Class 3: d561104.dat 
+<li> Class 4: d1453103.dat
+<li> Class 5: d611107.dat (new data from a separate experiment)
+</list>
+<br>
+The new class 5 waveforms are in row 5 in the figure below.<br>
+These waveforms were not used as training examples, and yet <br>
+they were "recognized" as class 4 waveforms ... not surprising.
+<br>
+<h2> hc-1, data from five experiments </h2>
+<img src=./five-experiments-NN.jpg > <img src=./five-experiments-confusion.jpg ><br>
+<img src=./five-experiments-1-4-imagesc.jpg ><img src=./five-experiments-5th-imagesc.jpg >
+
+
+</body>
+
+</html>

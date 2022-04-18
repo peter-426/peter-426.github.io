@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="./index_files/theme.css">
+</style>
+<title> Spike Sorting </title>
+</head>
+
+
+<body>
+<br><br>
+<a href=.. > Home </a>
+<br>
+<br>
+<h1> Mini Project 3: spike detection and spike sorting </h1>
+
+<h2> Background information </h2>
+<table>
+An extracellular electrode might record from two or three up to about <br>
+10 nearby neurons during a trial.  Spike waveforms recorded from different <br>
+neurons may overlap in time and space, so some recorded waveforms will be difficult <br>
+to associate with their source neuron.  This is known as the spike sorting problem.<br><br>
+The spike sorting pipeline typically proceeds in four stages:
+<list>
+<li> data filtering
+<li> threshold spike detection
+<li> feature extraction
+<li> clustering
+</list>
+<br><br>
+<img src=./Einevoll2012-pipeline.jpg > <br>
+Image: Einevoll et al. (2012), <br>
+Towards reliable spike-train recordings from thousands of neurons with multielectrodes, <br>
+Current Opinion in Neurobiology<br>
+Also see: <a href=http://spike.g-node.org/ > spike.g-node.org </a>
+<br><br>
+</table>
+
+Spike sorting software that may work well for Neuropixels data:
+<list>
+	<li> <a href=https://github.com/cortex-lab/neuropixels/wiki/Spike_sorting > Kilosort wiki </a>
+	<li> <a href=https://github.com/cortex-lab/KiloSort > Kilosort 1 </a>
+	<li> <a href=https://github.com/MouseLand/Kilosort2 > Kilosort 2 </a>
+	<li> <a href=http://www.jrclust.org/ >  JRCLUST (Janelia Rocket Clust) </a>
+	<li> <a href=http://www.yger.net/software/spyking-circus/ >  SpyKING CIRCUS at yger.net</a>
+	<li> <a href=https://spyking-circus.readthedocs.io/en/latest/index.html > SpyKING CIRCUS docs</a>
+ </list>
+
+
+
+<h2> SpikeX spike sorting software </h2>
+
+I implemented SpikeX with Matlab to visualise ephys data and test <br>
+various methods for spike sorting.   Data that includes intracellular<br>
+recording ("ground truth") was used to validate SpikeX.  <br>
+<list>
+<li> Henze, et al. Simultaneous intracellular and extracellular <br>
+	recordings from hippocampus region CA1 of anesthetized rats (2009). <br>
+	CRCNS.org. http://dx.doi.org/10.6080/K02Z13FP
+</list>
+
+<br><br>
+The data consists of simultaneous intracellular and extracellular <br>
+recordings in the hippocampus of anesthetized rats. Experimental <br>
+procedures and major results are described in:
+<list>
+<li>Henze et al, J. Neurophysiology 84, 390-400 (2000).
+<li>Harris et al, J. Neurophysiology 84, 401-414 (2000).
+</list>
+<br><br>
+Data source:  <a href=https://buzsakilab.com/wp/resources/datasets/ > Buszaki Lab </a> <br>
+Data details: <a href=http://crcns.org/data-sets/hc/hc-1/about > about the hc-1 data set at CRCNS </a> <br>
+Data may be downloaded from: <a href=https://portal.nersc.gov/project/crcns/download/hc-1 > CRCNS download </a>
+<br><br>
+Data was recorded by tertrodes or silicon probes.
+<list>
+	<li> For tetrodes there are 4 extracellular channels.
+	<li> For silicon probes (2 shanks by 6 channels each) see the IntraExtra.xls file. <br>
+		 The order is indicated for one shank, remaining channels form the other shank.
+</list>
+<br>
+[http://crcns.org/data-sets/hc/hc-1/about]
+<br><br>
+
+<h2>Preliminary test results.</h2>
+<h3> <a href=./SpikeX > SpikeX tested methods such as PCA and kmeans for spike sorting. </a> </h3>
+<h3> <a href=./results-0 > SpikeX tested neural networks for spike detection. </a> </h3>
+Neural networks (NNs) have been used successfully for image classification and <br>
+speech recognition.  However, they are also known for wildly incorrect classification <br>
+of some inputs.  This means that NNs are not well matched to problems where the cost of  <br>
+classification errors is high, or where classifications must be explained (e.g. why  <br>
+was the input classified as an Ostrich?).   And they are not well suited for detecting <br>
+when an input does not belong to any known class ... this is a problem  because <br>
+NNs work by detecting similarities between training examples and new data, not differences. <br>
+<br>
+So, although NNs can appear to work well on some tasks, deceptively well in some cases, <br>
+they might be the wrong method for spike detection.  In the slightly broader context of <br>
+spike sorting, where might NNs be useful?
+<h2>Test results.</h2>
+<h3> <a href=./results-2 > Results 2: the NN can be confused by similar waveform classes <br>
+                           after training. </a> </h3>
+<h3> <a href=./results-3 > Results 3: the NN may, with high confidence, falsely recognize <br>
+                           a new class of waveform. </a> </h3>
+<br><br>
+
+</body>
+
+</html>

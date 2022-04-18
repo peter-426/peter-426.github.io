@@ -1,0 +1,61 @@
+<html><head>
+
+  <title> Comparative Genomics Workflow  </title>
+
+  <link rel="stylesheet" type="text/css" href="index/style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body>
+
+<div name="outercontent">
+
+<a name="content"></a>
+
+<div class="content">
+
+<table>
+  <td>First we acquired protein sequence data, and blasted the query sequences against the subject proteomes.
+  BLAST attempts to align pairs of sequences such that a scoring function is maximized.  Very similar sequences
+  probably share a common ancestral sequence, which suggests that they have the same or similar function.  Sequences 
+  with a common ancestor are <i>homologous</i>.  The threshhold E and percent identity were used to <b>filter out</b> 
+  most alignment pairs.   
+  <p>
+  Second we aligned multiple sequences using <a href=http://www.drive5.com/muscle  >MUSCLE</a>.
+  Multiple sequence alignment algorithms assume that the sequences being aligned are homologous.  
+  By aligning many homologous sequences we identified which specific residues are important to a set of similar proteins.
+  These residues, known as <i>motifs</i>, may be far apart in the sequence but close together in 3D space (Zvelebil and Baum, 2008).  
+  They often coincide with an active site and, coincidentally, a good drug target. 
+  <p>
+  Third we mapped conservation scores from the MSAs to each broadly conserved <i>B. subtilis</i> protein.
+  Of course, the quality of the conservation scores was limited by the quality of the MSA.
+  </td>
+  <tr>
+  <td>
+  <img alt=" workflow 1" src="graphics/sw/wf1.png"> 
+  </td>
+</table>
+
+
+</div>
+
+<!-- banner of head links -->
+<div class="banner">
+  <div class="banner-text">
+    Comparative Genomics Workflow
+  </div>
+  <div class="banner-image">
+	        
+  </div>
+</div>
+
+
+
+
+<!-- menu starts here -->
+<?php include("menu.htm"); ?> 
+
+<!-- menu ends here -->
+
+
+</body></html>

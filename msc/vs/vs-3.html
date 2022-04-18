@@ -1,0 +1,107 @@
+<html><head>
+
+  <title>Virtual Screening: predicted sites </title>
+
+  <link rel="stylesheet" type="text/css" href="index/style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body>
+
+<div name="outercontent">
+
+<a name="content"></a>
+
+<div class="content">
+
+
+<table>
+<td>
+Ligands tend to bind near known active sites and/or conserved residues.
+<p>
+For each protein, the top scoring ligands docked close to very highly conserved residues (red).
+However, the search space used by <a href=http://vina.scripps.edu>Vina</a> was limited and 
+centered 
+on the most highly conserved region.
+To validate these results, we also used Vina to dock a set of ligands in a search space centered 
+on an area
+characterized by low conservation.  These <a href=vs-4.php > results </a> were somewhat suprising.
+</td>
+<tr>
+<td> <img alt="   protein with  " src="../graphics/vs/ftsZ-top-ligand.png">  </td>
+<tr>
+<th>(a) FtsZ: -12.1 kcal/mol </th> 
+<tr>
+<td> <img alt="   protein with "  src="../graphics/vs/coaD-top-ligand.png">  </td> 
+<tr>
+<th>(b) CoaD: -10.2 kcal/mol</th>  
+<tr>
+
+<td> <img alt="   protein with "  src="../graphics/vs/ywtF-top-ligand.png">  </td>
+<tr>
+<th>(c) YwtF: -9.1 kcal/mol</th> 
+<tr>
+<td> <img alt="   protein with "  src="../graphics/vs/racE-top-ligand.png">  </td> 
+<tr>
+<th>(d) RacE: -7.7 kcal/mol</th>  
+<tr>
+</table>
+
+
+<table>
+<td>
+Ligands tend to bind in pockets with conserved residues.
+<p> 
+To validate our results we docked a subset of ligands (about 10,777) where we expected the best scores 
+and where we expected the worst scores (based on conservation).
+<p>
+This page shows images of ligands docked by <a href=http://vina.scripps.edu >Vina</a> in a search space centered on an area
+characterized by low conservation.   Consequently, we expected the top scores for each
+protein to be worse in this case than in <a href=vs-3.php>the case</a> where we docked ligands in search space 
+that contained known or predicted active sites.   
+Images (a) and (b) are just as we expected -- the scores are worse (they are less negative).
+However, images (c) and (d) show that ligands scored better in this search space.
+We have been focussing on conservation but surface topology is important too.
+Image (c) shows a ligand that scores well due to a deep pocket with moderate conservation.
+For this protein, topo
+ 
+</td>
+<tr>
+<td> <img alt="   protein with  " src="../graphics/vs/ftsZ-neg-top-ligand.png">  </td>
+<tr>
+<th align=left >(a) FtsZ: -8.4 kcal/mol</th> 
+<tr>
+<td> <img alt="   protein with "  src="../graphics/vs/coaD-neg-top-ligand.png">  </td> 
+<tr>
+<th align=left >(b) CoaD: -6.6 kcal/mol</th>  
+<tr>
+<td> <img alt="   protein with "  src="../graphics/vs/ywtF-neg-top-ligand.png">  </td>
+<tr>
+<th align=left >(c) YwtF: -11.4 kcal/mol </th>
+<tr>
+<td> <img alt="   protein with "  src="../graphics/vs/racE-neg-top-ligand.png">  </td> 
+<tr>
+<th align=left >(d) RacE: -8.3 kcal/mol  </th>  
+<tr>
+</table>
+
+</div>
+
+<!-- banner of head links -->
+<div class="banner">
+  <div class="banner-text">
+     Virtual Screening: predicted sites
+  </div>
+  <div class="banner-image">
+	        
+  </div>
+</div>
+
+
+<!-- menu starts here -->
+<?php include("menu.htm"); ?> 
+
+<!-- menu ends here -->
+
+
+</body></html>

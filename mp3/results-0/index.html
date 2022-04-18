@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="./index_files/theme.css">
+</style>
+<title> Spike Sorting: results 0 </title>
+</head>
+
+
+<body>
+<br>
+<a href=../index.html > Home: Mini Project 3 </a>	
+<br>
+<h1>Neural network for pattern recognition </h1>
+<textarea rows=4 cols=70 >
+Matlab's patternnet can generate networks with a user defined number of neurons and hidden layers. For example, 30 neurons in one hidden layer, or 10 each in three hidden layers.
+</textarea>
+<br>
+<br>
+<img src=./diagram.jpg ><br>
+<img src=./diagram-3-hidden-layers.jpg ><br>
+<hr>
+<br><br>
+<br>
+<h1> Tetrode Data: hc-1. </h1>
+    There are four extracellular channels, one intracellular channel, <br>
+    and one stimulus channel.   
+<br><br>
+
+<textarea  rows=14  cols=70 >
+Waveform recognition of true spikes by the neural net is shown below.
+The first four channels are extracellular waveforms extracted per intracellular spike times (from "neuron A").  
+
+Not spikes (NS).  NS 1 represents synthetic waveforms, and NS 2 represents detected spikes recorded on channel 2 that did not occur at the intracelluar spike times and, therefore, might be from one or more other neurons nearby.
+
+For this data, each waveform is 21 data points long, the neural net has one hidden layer with 30 neurons that use sigmoid activation functions, and the output layer uses a softmax function to output the probability that the waveform belongs to each of the six classifications. 
+</textarea>
+<br><br>
+<h2> d533101 </h2>
+<img src=./d533101-NN.jpg width=1000 >  
+
+<hr>
+<br><br>
+
+
+</body>
+
+</html>
+
+
+

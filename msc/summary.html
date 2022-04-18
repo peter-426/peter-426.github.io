@@ -1,0 +1,111 @@
+<html><head>
+
+  <title> Research Summary </title>
+
+  <link rel="stylesheet" type="text/css" href="index/style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body>
+
+<div name="outercontent">
+
+<a name="content"></a>
+
+<div class="content">
+
+This is a quick summary of the two main parts of our current research.
+<p>
+<b> Comparative Genomics:</b>  We compared <a href=bsub.html > 123 cell wall associated  proteins</a> from <i>Bacillus subtilis</i> 
+with proteins in  <a href=proteomes.html >60 complete proteomes</a> of a diverse collection of bacteria, 
+including Gram positive and Gram negative species. 
+Similar proteins found in many species of bacteria may be suitable targets for broad spectrum antibiotic drugs.
+There are at least two reasons for this: (1) proteins found in more species of bacteria are probably more important,
+and more likely to be essential, for bacterial survival than uncommom proteins; (2)  if the normal function of such proteins
+can be inhibited by a chemical compound (drug), then that compound might be effective against a broad spectrum of bacteria.
+Broad spectrum antibiotics may be appropriate where the cause of an infection is unknown.  For example, during
+an emergency where there is not enough time to make a specific diagnosis.
+<p>
+The cell wall is an esential structure for virtually all bacteria as it protects the cell from damage and osmotic lysis;
+it is the target of our best antibiotics (Leaver <i>et al.</i>, 2009). 
+<p>
+Given the importance of the cell wall to most bacteria and the lack of a cell wall in human cells, 
+we have focussed our research efforts on cell wall proteins.  However, the cell
+wall is quite complex and there are over 100 cell wall associated proteins in <i>B. subtilis</i>.
+Starting with this well known model organism, we compared 123 <i>B. subtilis</i> cell wall protein sequences 
+with proteins in 60 species of bacteria (selected for diversity and pathogenicity).
+<p>
+
+<table>
+<td rowspan=4>
+Proteins with similar sequences tend to have similar 3D structures and similar functions in each organism (Rost, 1999).
+It is often said that sequence determines structure determines function, but small differences in sequence can make 
+big differences in structure and, even more confusingly,  very different sequences can fold into 3D structures
+that have the same function because they have the same <i>active site</i> (the place where other molecules bind 
+to the protein)(Lesk, 2008).  As a result, sequence analysis and predictions based on genomic data is often more about probability than
+certainty.  Nonetheless, using 
+<a href=http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastHome>BLAST</a> (Altschul <i>et al.</i>, 1997)
+for pairwise sequence alignment and the <a href=http://www.pdb.org>Protein Data Bank</a> for 3D structure information,
+we generated the following <a href=blast.html table </a> and selected four proteins that are broadly conserved and have a known 3D structure.  
+</td>
+<td>
+<table border=2 
+<th colspan=3> Four Proteins </th> <tr>
+<th>Gene name</th>  <th> UniProt #</th>   <th>PDB ID</th> <tr>
+<td> <i>ftsZ</i> </td>  <td> <a href=http://www.uniprot.org/uniprot/P17865 >P17865</a> </td>   <td> <a href=http://www.rcsb.org/pdb/explore/explore.do?structureId=2VXY >2VXY</a> </td> <tr>
+<td> <i>coaD</i> </td>  <td> <a href=http://www.uniprot.org/uniprot/O34797 >O34797</a> </td>   <td> <a href=http://www.rcsb.org/pdb/explore/explore.do?structureId=1O6B >1O6B</a> </td> <tr> 
+<td> <i>ywtF</i> </td>  <td> <a href=http://www.uniprot.org/uniprot/Q7WY78 >Q7WY78</a> </td>   <td> <a href=http://www.rcsb.org/pdb/explore/explore.do?structureId=3MEJ >3MEJ</a> </td> <tr>  
+<td> <i>racE</i> </td>  <td> <a href=http://www.uniprot.org/uniprot/P94556 >P94556</a> </td>   <td> <a href=http://www.rcsb.org/pdb/explore/explore.do?structureId=1ZUW >1ZUW</a> </td>
+</table>
+</td>
+<table>
+
+<p>
+The BLAST results <a href=blast.html>  table </a> only includes hits where 
+a 3D structure is currently available.  Sequence comparison results for all <i>B. subtilis</i> proteins
+with a similar protein in at least 10 of the 60 proteomes may be found <a href=all.html >here</a>.
+<p>
+<b>Virtual screening:</b>  We downloaded the 
+<a href=http://zinc.docking.org/vendor0/index_meta.shtml >Natural Products Data </a>
+set (NPD) (about 90,000 ligands) from the <a href=http://zinc.docking.org/ >ZINC</a>  online database (Irwin and Shoichet, 2005).
+ZINC contains over 13 million purchasable compounds represented by text files that include 3D coordinates 
+in a format well suited to "docking" ligands with proteins (<i>in silico</i>).  This is an extremely 
+cost effective way to virtually screen vast numbers of ligands and eliminate those with no drug potential
+from further consideration..
+<p>
+However, virtual screening is computationally intensive and screening even 100,000 would take too
+long on an ordinary PC.  So we used <i>cisbclust</i> at <a href=http://www.ncl.ac.uk/cisban > CISBAN, Newcastle University </a>.  
+Access to this cluster's  88 processors is managed by software known as <a href=http://www.cs.wisc.edu/condor/ >CONDOR</a> (Thain <i>et al.</i>, 2005).   
+We used Perl scripts,  <a href=condor.html >  mk.pl, dock.pm, go.pl </a>, to automate the submission of thousands of batch jobs 
+to cisbclust via CONDOR.  This allowed us to dock about 100,000 ligands with our four proteins using AutoDock Vina (Trott and Olson, 2010) 
+within a small fraction of the time that would be required by one PC.
+<p>
+<table>
+<td> <b>Results: </b> The <a href=docking-stats.html > docking scores for NPD ligands</a> from the ZINC database bind best with FtsZ,  
+with CoaD coming in second place.   This chart shows the worst (max), the average (mean), and the 
+best (min) binding score for each protein.  These scores are in 
+<a http://en.wikipedia.org/wiki/Kilocalorie_per_mole > kcal/mol </a> and, as odd as this may 
+sound, the more negative the better.   Based on the work completed so far, <a href=http://www.demuris.co.uk >Demuris Ltd.</a> 
+has purchased the NPD chemical compounds with the greatest probability of success for <i>in vitro</i> testing.  
+In theory at least, our research has provided a rational and principled basis for prioritizing relatively 
+expensive wet lab experiments at virtually no cost per chemical compound (ligand) considered.
+</td>
+<td>  <img src=graphics/vs/npd-scores.png > </td>
+</table>
+</p>
+
+</div>
+
+<!-- banner of head links -->
+<div class="banner">
+  <div class="banner-text">
+     Research Summary
+  </div>
+  <div class="banner-image">
+	        
+  </div>
+</div>
+
+
+
+</body></html>

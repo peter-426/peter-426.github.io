@@ -1,0 +1,87 @@
+//is canvas supported?
+var test = document.createElement('canvas');
+if (!(test.getContext && test.getContext('2d')))
+	throw "Canvas not supported.";
+
+var W=120;
+var H=142;
+var secondImg = "holy_grail.jpg";
+var delay = 1000;
+var replacementHTML = "\
+		<div style=\"background-image:url('" + secondImg + "'); width:" +  W +"px; height:" + H + "px;\">\
+		<canvas  id=\"canv\" width=\"" + W + "\" height=\"" + H + "\" style=\"border:0px;\">\
+		boo </canvas>\
+		\
+		</div>";
+var img1 = document.getElementById("mp_img");
+var img2 = new Image();
+img2.onload = function(){
+setTimeout(EasterEgg,delay);
+};
+img2.src=secondImg;
+
+var ctx;
+var started = false;
+function EasterEgg() {
+	img1.parentNode.innerHTML=replacementHTML;
+	canv = document.getElementById("canv");
+	ctx=canv.getContext("2d");
+	ctx.drawImage(img1,0,0,W,H);
+	ctx.lineJoin = "round";
+	ctx.lineWidth = 8;
+	ctx.globalCompositeOperation = "destination-out";
+	canv.addEventListener('mousemove', ev_canvas, false);
+	canv.addEventListener('mousedown', ev_canvas, false);
+	canv.addEventListener('mouseup', ev_canvas, false);
+	canv.addEventListener('mouseout',ev_canvas,false);
+};
+
+// The general-purpose event handler. This function just determines the mouse 
+// position relative to the canvas element.
+function ev_canvas (ev) {
+    var obj = canv;
+    var top = 0;
+    var left = 0;
+    while (obj && obj.tagName != 'BODY') {
+        top += obj.offsetTop;
+        left += obj.offsetLeft;
+        obj = obj.offsetParent;
+    }
+ 
+    // return relative mouse position
+    ev._x = ev.clientX - left + window.pageXOffset;
+    ev._y = mouseY = ev.clientY - top + window.pageYOffset;
+
+  // Call the specific event handler
+  window[ev.type](ev);
+ }
+
+function mousedown(ev) {
+  ctx.beginPath();
+  ctx.arc(ev._x,ev._y,4,0,2*Math.PI);
+  ctx.fill();  
+  ctx.beginPath();
+  ctx.moveTo(ev._x, ev._y);
+  started = true;
+  ev && ev.preventDefault ? ev.preventDefault() : window.event.returnValue=false;
+  return false;
+};
+
+// This function is called every time you move the mouse.
+function mousemove(ev) {
+	if (started) {
+	  ctx.lineTo(ev._x, ev._y);
+	  ctx.stroke();
+	}
+};
+
+function mouseup(ev) {
+    if (started) {
+      mousemove(ev);
+      started = false;
+    }
+};
+
+function mouseout(ev){
+   started = false;
+}

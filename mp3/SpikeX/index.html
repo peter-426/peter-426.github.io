@@ -1,0 +1,54 @@
+<html>
+<head>
+<style>
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 10px;
+}
+</style>
+</head>
+
+<body style="background-image:url(../../index_files/mars2.jpg)">
+<br>
+<a href=../index.html > Home: Mini Project 3 </a>
+<br>
+
+<h1> SpikeX spike sorter </h1>
+
+<br><br>
+<h2> Tetrode Data: hc-1, d533101.dat </h2>
+<textarea rows="4" cols="50"> Plot 10 seconds of unfiltered data. </textarea>
+<br>
+<img src=./d533101-10-secs-UN-filtered.jpg width=1000 >
+
+<br><br><br><br>
+
+
+<textarea rows="4" cols="50"> Spike sort one channel. </textarea>
+<br>
+<img src=./d533101-sort-1-channel.jpg >
+
+<br><br>
+<br><br>
+
+
+<textarea rows="8" cols="50">
+Spike sort the four extracellular channels separately, one channel per row.    Row 5 shows the intracellular spikes (ground truth).
+Clusters 1 to 3 are in column order, unclustered spikes (column 4) were evicted from a cluster due to poor fit.
+
+Note: y axis scale varies. </textarea>
+<br>
+<img src=./d533101-sort-n.jpg >
+<br><br>
+
+
+<br><br><br><br>
+
+</body>
+
+</html>

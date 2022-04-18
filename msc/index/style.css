@@ -1,0 +1,170 @@
+
+
+a.specialLink:link { color: black; }
+a.specialLink:visited { color: #333333; }
+a.specialLink:hover { color: white; }
+
+body {
+    background-color: #e5e5cd;    
+    color: black;
+    margin-left: 1%;
+    margin-right: 2%;
+    margin-top: 1%;
+    font-family: arial;
+}
+
+
+.entry {
+       margin: 2px;
+       border: solid;
+       border-color: #444499;
+       padding: 10px;
+}
+
+
+.entry-date {
+    color: red;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.entry-qotd {
+      margin-left: 2em;
+      margin-right: 2em;
+}
+
+
+.banner {
+    background-repeat: no-repeat;
+    margin: 2px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 95%;
+    height: 85px;
+    border: solid;
+    border-color: #005500;
+    background-color: #3366FF;
+    padding-right: 4px;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.banner-image{
+    display: inline;
+    z-index: 3;
+    position: absolute;
+    top: 12px;
+    left: 3.5%;
+}
+.banner-text{
+     top: 35px;
+     left: 260px;
+     position: absolute;
+     font-weight: bold;
+     font-size: 1.8em;
+}
+
+.banner-search{
+     top: 10px;
+     left: 700px;
+     position: absolute;
+     font-weight: bold;
+     font-size: 1.8em;
+}
+
+.banner-links {
+    font-weight: normal;
+    font-size: 1.2em;
+    text-align: right;
+}
+
+.banner-links a{
+    text-decoration: none;
+}
+
+.crosslink a {
+    text-decoration: none;
+    font-size: 0.7em;
+}
+
+.menu {
+    z-index: 4;
+    font-weight: normal;
+    font-size: 1.1em;
+    padding: 5px;
+    position: absolute;
+    top: 120px;
+    left: 2px;
+	width: 160px;
+    background-color: #3366FF;
+    border: solid;
+    border-color: #005500;
+    text-align: center;
+}
+
+
+.menu a {
+    font-weight: normal;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+
+.menu .separator {
+    display: block;
+    color: black;
+    background-color: yellow;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+
+.menu .active {
+    display: block;
+}
+
+.menu .inactive {
+    display: block;
+}
+
+.tophead {
+    font-weight: bold;
+    font-size: 1.7em;
+    position: absolute;
+    top: 140px;
+    left: 10px;
+    right: 7ex
+    width: 750px;
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    background-color: #e5e5cd;    
+    top: 110px;
+    left: 5ex;
+    width: 85%;
+}
+
+
+.toplink {
+    z-index: 1;
+    position: relative;
+    top: 20px;
+}
+
+.outercontent {
+    z-index: 2;
+    font-size: 1em;
+    position: absolute;
+    top: 170px;
+    left: 10ex;
+    text-align: left;
+    right: 5ex;
+}
+
+.footer-text {
+    position: absolute
+    bottom: 0px;
+    left: 10px;
+}

@@ -1,0 +1,79 @@
+<html><head>
+
+  <title> Virtual Screening: validation </title>
+
+  <link rel="stylesheet" type="text/css" href="index/style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body>
+
+<div name="outercontent">
+
+<a name="content"></a>
+
+<div class="content">
+
+
+<table>
+<td>
+Ligands tend to bind in pockets with conserved residues.
+<p> 
+To validate our results we docked a subset of the NPD ligands (about 10,777) in two search spaces: (1)
+where we expected the best scores, and (2) where we expected the worst scores (based on conservation).  
+<p>
+The images on the left (a..d) show ligands docked by <a href=http://vina.scripps.edu >Vina</a> in a search space centered on an area
+characterized by low conservation.   Consequently, we expected the top scores for each
+protein to be worse in this case than in <a href=vs-3.html >the case</a> where we docked ligands in search space 
+that contained known or predicted active sites.   
+Images (a) and (b) are just as we expected -- the scores are worse (they are less negative) than the same ligands docked 
+on the "front".  
+<p>
+However, images (c) and (d) show that ligands scored better at the "back".  
+We have been focussing on conservation but surface topology is important too.
+Image (c) shows a ligand that scores much better docking at the "back" than the "front".
+This appears to be due to a deep pocket with moderate conservation.  The intensely conserved area 
+shown in image (g) lacks a substantial pocket, which indicates that conservation is not the only thing that matters.
+Images (d) and (h) are ambiguous -- neither presents an obvious active site -- nonetheless the binding site is proximate
+to conserved residues.
+</td>
+<tr>
+<td> <img alt="   protein with  "                                         src="../graphics/vs/ftsZ-neg-top-ligand.png">  </td>
+<td> <img alt="FtsZ protein with surface colored by conservation score "  src="../graphics/vs/ftsZ-front.png"> </td>
+<tr>
+<th align=left >(a) FtsZ back: -8.4 kcal/mol</th>                          <th>(e) FtsZ front: -11.9 kcal/mol (ligand not shown) </th>
+<tr>
+<td> <img alt="   protein with "                                               src="../graphics/vs/coaD-neg-top-ligand.png">  </td> 
+<td> <img alt="CoaD protein with surface colored by conservation score"        src="../graphics/vs/coaD-front.png"> </td>
+<tr>
+<th align=left >(b) CoaD back: -6.6 kcal/mol</th>                               <th>(f) CoaD front: -9.6 kcal/mol (ligand not shown) </th>
+<tr>
+<td> <img alt="   protein with "                                           src="../graphics/vs/ywtF-neg-top-ligand.png">  </td>
+<td> <img alt=" protein with surface colored by conservation score "       src="../graphics/vs/ywtF-front.png"> </td>
+<tr>
+<th align=left >(c) YwtF back: <font color=red>-11.4</font> kcal/mol </th>      <th>(g) YwtF front: -9.0 kcal/mol (ligand not shown) </th> 
+<tr>
+<td> <img alt="   protein with "                                           src="../graphics/vs/racE-neg-top-ligand.png">  </td> 
+
+<td> <img alt=" protein with surface colored by conservation score (front)" src="../graphics/vs/racE-front.png"> </td>  
+<tr>
+<th align=left >(d) RacE back: -8.3 kcal/mol  </th>                             <th>(h) RacE front: -7.6 kcal/mol (ligand not shown)</th>
+<tr>
+</table>
+
+
+</div>
+
+<!-- banner of head links -->
+<div class="banner">
+  <div class="banner-text">
+     Virtual Screening: validation
+  </div>
+  <div class="banner-image">
+	        
+  </div>
+</div>
+
+
+
+</body></html>

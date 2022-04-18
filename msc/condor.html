@@ -1,0 +1,224 @@
+<html><head>
+
+  <title> Perl scripts </title>
+
+  <link rel="stylesheet" type="text/css" href="index/style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body>
+
+<div name="outercontent">
+
+<a name="content"></a>
+
+<div class="content">
+
+<h3>mk.pl, dock.pm, and go.pl </h3>
+
+<pre>
+# mk.pl
+#
+# Makes a set of classads for CONDOR.  Each classad
+# defines a subset of ligand files to be docked.
+# User specifies gene name, start index, sub set size, max startindex.
+# May generate hundreds of classads.
+#
+# Author :  Peter Hebden,  phebden@gmail.com
+
+$#ARGV == 3 || die "Usage: $0  GN start size maxStart";
+
+$GN        = $ARGV[0];   # Gene name
+$START     = $ARGV[1];   # starting with ligand file index number
+$SIZE      = $ARGV[2];   # number of ligands in this batch
+$MAX_START = $ARGV[3];   # maximum index of first ligand in batch;  
+                         # last batch size may be truncated if not that many ligands 
+
+for($i = $START; $i <= $MAX_START; $i += $SIZE)
+{
+  open(FD, ">d_${GN}_${i}.classad") || die "$!"; # save classad to file
+
+  $end = $i + $SIZE - 1;
+  print "\n making ads for GN=$GN $i to $end \n\n";    # following lines will be a classad
+  print FD "
+  universe     = vanilla
+  Executable   = /usr/bin/perl
+  Log          = perl.log
+
+  RESERVED_SWAP = 0
+      
+  Error   = err.\$(Process)
+  Input   = dock_${GN}_${i}_${end}.pl
+  Output  = out.\$(Process)
+  Log     = foo.log
+
+  Queue";
+  close FD;
+  open(FD, ">dock_${GN}_${i}_${end}.pl") || die "$!";  # save to file; parameters used by dock.pm
+
+  print FD "use dock;
+
+  \$GN = \"$GN\";
+
+  \$start = \"$i\";
+  \$end   = \"$end\";
+
+  runDock();\n";
+
+  close FD;
+}
+
+
+<p>
+<hr>
+
+<pre>
+# dock.pm
+#
+# This module is used by a unique perl script for each classad, 
+# and runs Vina to dock ligands with receptor.
+#
+# Author:  Peter Hebden,  phebden@gmail.com
+
+use Cwd;
+
+sub runDock()
+{
+  $d = getcwd;
+
+  $vina = "/common/home/YOUR-LOGIN-ID/bin/vina";
+  $startingDir = "$d";
+
+  $ligandFolder   = "$startingDir/ligand";
+  $receptorFolder = "$startingDir/receptor-$GN";
+  $outFolder      = "$startingDir/out-$GN";
+  $logFolder      = "$startingDir/log-$GN";
+
+  print "\nstarting dir = $startingDir \n";
+  print "ligandFolder   = $ligandFolder \n";
+  print "receptorFolder = $receptorFolder \n";
+  print "outFolder      = $outFolder \n";
+  print "logFolder      = $logFolder \n\n";
+
+
+  -d $receptorFolder || die "receptor folder does not exist\n"; 
+  -d $ligandFolder   || die "ligand folder does not exist\n"; 
+
+  mkdir $logFolder;
+  mkdir $outFolder;
+
+  chdir($ligandFolder) or die "Error: failed to chdir to $path $!";
+
+  opendir(DIR, $ligandFolder);
+  @files = sort ( grep /pdbqt$/, readdir(DIR) ); 
+  closedir(DIR);
+
+  $count = 0;
+
+  print "Docking ... \n";
+  $t = localtime();
+  print "$t\n";
+
+  $config   = "${receptorFolder}/conf.txt";
+  $receptor = "$receptorFolder/$GN.pdbqt";
+
+  -e $config   || die "config file does not exist\n"; 
+  -e $receptor || die "receptor file does not exist\n"; 
+
+  print "\n config=$config \n receptor=$receptor \n";
+  $max = $#files;
+
+  if( $start < 0 ) { $start = 0; }
+
+  if( $end > $max )  { $end = $max; }
+
+  if ($start > $end ) {  $start = $end;  }
+
+  @files = @files[$start..$end]; #    here we select a slice of ligands from the ligand folder
+
+  foreach $file (@files) 
+  {
+     if ($file =~ /.*pdbqt$/) 
+     {
+      print "$file \n";
+      $count += 1;
+      if ($count % 100 == 1) { print "$count >> $ligandFolder/$file\n";  }  # feedback for when not using nohup
+      
+      $ligand   = "$ligandFolder/$file";
+      $out      = "$outFolder/out_$file";
+      $log      = "$logFolder/${file}_log.txt";
+      
+      if ( ! -e $out ) 
+      {
+      `$vina --config $config --ligand $ligand --receptor $receptor --out $out --log $log`  
+      }
+     }   
+  }
+  $t = localtime();
+  print "$t\n";
+
+  print "docked $count ligands\n";
+}
+1
+
+
+
+<p>
+<hr>
+
+<pre>
+# go.pl
+#
+# submits all classads in each docking folder specified on command line.
+#
+# Author:  Peter Hebden,  phebden@gmail.com
+
+# docking-ID is the folder that contains classad files and Vina in/output files
+
+use Cwd;
+
+$#ARGV == 0 || die "Usage: $0 docking-ID\n";  
+
+$dr = "$ARGV[0]";
+print "\n";
+
+@dirs = glob "$dr*";
+
+foreach $d (@dirs) 
+{
+  chdir $d;
+  print "$d \n";
+  @files = glob "*.classad";
+
+  foreach $f (@files)
+  {
+      `condor_submit $f`;     #  submits classad to condor, job waits in queue as Idle until Run.
+       print "$f \n";
+  }
+  chdir "..";
+}
+
+
+</div>
+
+<!-- banner of head links -->
+<div class="banner">
+  <div class="banner-text">
+    Perl Scripts for CONDOR
+  </div>
+  <div class="banner-image">
+	        
+  </div>
+</div>
+
+
+
+
+<!-- menu starts here -->
+
+<?php include("menu.htm"); ?> 
+
+<!-- menu ends here -->
+
+
+</body></html>

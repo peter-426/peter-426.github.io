@@ -1,1 +1,319 @@
-hello
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="index_files/theme.css">
+<title>  </title>
+</head>
+
+<body>
+
+<div id="thebody">
+<header>
+
+
+&nbsp; &nbsp &nbsp; &nbsp;  
+&nbsp; &nbsp &nbsp; &nbsp; &nbsp; 
+<img src=index_files/peter_pic.png width=80 > 
+&nbsp; &nbsp &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp &nbsp; 
+ 
+<a class="specialLink" href=https://github.com/peter-426> GitHub </a> </a>
+
+<br>
+
+<section>
+Interests: synthetic biology, drug discovery, robotics, lab automation, machine learning, AI, neuroscience, economics, data science.
+
+<h3>Education</h3>
+<table>
+<tr> <td>PhD </td>  <td> Computer Science, University of Melbourne, Australia </td> <tr>
+<tr> <td>MRes</td>  <td> Modelling Biological Complexity, University College London,  UK</td> <tr>
+<tr> <td>MSc </td>  <td> Bioinformatics, Newcastle University, UK  </td> <tr>
+<tr> <td>BA  </td>  <td> Economics, University of California,  Berkeley, USA </td>
+</table>
+
+</section>
+
+<section>
+<br>
+<h3>Automation + AI for Synthetic Biology</h3>
+<list>
+<li> <a href=./other/colony-picker-extension-for-Opentrons--slides.pdf > slides </a>
+<li> Aim: Augment the Design Build Test Learn (DBTL) cycle with AI to increase yeast cell production of, for example, a precursor to a pharmaceutical drug. 
+<li> Methods: A form of AI known as <i>deep learning</i> tends to require very large data sets of examples for training. Automation can faciltate data generation. 
+     So I built a colony picker extension for the Opentrons OT-2 liquid handling 
+     robot, as shown on <a class="specialLink" href=https://www.youtube.com/channel/UCkWYMoMaR-2BUtU9O6clCAA ><b>YouTube</b></a> (to be integrated with the workflow).  
+     In this video, the robot picks an orange colony for analysis. A Raspberry Pi + camera is mounted behind the robot's arm. 
+     Object detection and classification was implemented with TensorFlow Lite and the EfficientDet D1 model.
+<li> Conclusion: Optimization of machine learning methods such as deep learning tends to result in small incremental performance gains.
+     However, simply increasing the size and quality of the training data can greatly increase object detection and genotype to phenotype prediction accuracy.
+</list>
+</section>
+
+
+<section>   <!- 3rd section! -->
+<div class="showhide noselect" onclick="ToggleAbstracts(3);">show/hide abstracts</div>
+<h3>MRes Modelling Biological Complexity: coursework at UCL</h3>
+Centre for Mathematics and Physics in the Life Sciences and Experimental Biology (CoMPLEX)
+<br> <a class="specialLink" href="http://www.ucl.ac.uk/complex/"> http://www.ucl.ac.uk/complex </a><br>
+<br>
+<br>
+<b>Mini project 1</b>:
+<br>  Computational analysis of NIRS and EEG data collected during seizures
+<a href=./mp/peter-h-MP1.pdf ><img src=./pubs/pdf_icon.png alt="pdf icon" ></a>, <br>
+supervised by Ilias Tachtsidis and Aikaterini Vezyroglou
+<br><br>
+<div class="abstract" style="display: none;">
+<b>Abstract:</b>
+Near Infrared Spectroscopy (NIRS) allows noninvasive monitoring of tissue  oxygenation and
+cerebral haemodynamics. It is particularly well suited to young developmental populations
+from birth to toddler years. NIRS can be used to measure
+in vivo changes oxygenated haemoglobin (&Delta;[HbO2]), deoxygenated haemoglobin
+(&Delta;[HHb]), and oxidised cytochrome-c-oxidase (&Delta;[oxCCO]),
+an enzyme in the mitochondria associated with tissue metabolism.
+
+The aims of this report are to explore the data, apply computational methods
+to EEG and NIRS measurements in the time and frequency domains to investigate
+neurovascular and neurometabolic coupling during seizures, and provide a basis for
+hypothesis generation.  Preliminary results suggest that NIRS data can
+be used for seizure detection and monitoring conditions before and after seizures, and that
+NIRS data can confirm the temporal and spatial order in which each seizure spreads.
+<hr>
+</div>
+<br>
+
+<b>Mini project 2</b>:
+<br>Conjunctive grid cells in the entorhinal cortex respond to location and head direction
+<a href=./mp/peter-h-MP2.pdf ><img src=./pubs/pdf_icon.png alt="pdf icon" ></a>, <br>
+supervised by Caswell Barry and Tom Wills
+<br><br>
+<div class="abstract" style="display: none;">
+<b>Abstract:</b>  In contrast to a hippocampal place cell, a grid cell has multiple firing
+fields with regular spacing that tessellates the environment with a hexagonal
+pattern. Directional grid cells (\conjunctive grid cells") respond selectively
+to head direction and location. The results in this report suggest: (1) A
+spike rate map’s centre of mass vector (CoM) directionality is correlated with
+preferred head direction (HD) when specific thresholds for gridness, CoM
+vector magnitude, and HD vector magnitude are applied. However, simply
+increasing the gridness threshold does not increase correlation. (2) Global
+grid shifts of all fields contribute more to the magnitude of the centre of mass
+vector of a spike rate map than local shifts based on a small number of fields
+with high spike rates.
+<hr>
+</div>
+<br>
+
+<b>Mini project 3</b>:<br>
+Neural Networks for Spike Classification
+<a href=./mp/peter-h-MP3.pdf ><img src=./pubs/pdf_icon.png alt="pdf icon"></a>, <br>
+supervised by Caswell Barry and Tom Wills
+<br><br>
+<div class="abstract" style="display: none;">
+<b>Abstract:</b> Classic spike sorting pipelines cluster spike waveforms into groups that represent
+their source neurons, but they suffer from inaccuracy and incomplete automation.
+Artificial neural networks (ANNs) are class of machine learning methods that are
+remarkably flexible and well suited to learning from large data sets. This report
+presents empirical evidence that neural network enhanced pipelines can provide
+higher classification accuracy than pipelines that rely exclusively traditional
+feature extraction and clustering methods.
+</div>
+
+<list>
+<li> SpikeX: <a class="specialLink" href=./mp3 > spike sorting </a>
+</list>
+<hr>
+<br>
+
+<b>Summer Project</b>:<br>
+ Classification of Post Synaptic Current Events
+ <a href=./sp/peter-h-sp.pdf ><img src=./pubs/pdf_icon.png alt="pdf icon" ></a>, <br>
+ supervised by Guy Moss and Lewis Griffin
+ <br><br>
+<div class="abstract" style="display: none;">
+<b>Abstract:</b> Whole cell recordings from purkinje cells contain a mixture of excitatory
+   and inhibitory events (EPSCs and IPSCs).  The aim of this project was to examine methods
+   of event detection and classification, i.e. templates versus neural networks.
+   Results indicated that the neural network based method was easier to apply and more accurate.
+</div>
+
+<list>
+    <li> Talk 1 slides:<a href=./sp/peter-h-sp-talk-1.pdf > project introduction </a>
+    <li> Talk 2 slides:<a href=./sp/peter-h-sp-talk-2.pdf > progress update </a>
+    <li> Summer project poster: <a href=./sp/peter-h-sp-poster.pdf > Classification of Post Synaptic Current Events </a>
+</list>
+<hr>
+<br>
+
+
+<h3>MRes Transferable Skills at UCL</h3>
+<a class="specialLink"  href=https://www.kaggle.com/c/mres-methylation-challenge > 
+<b>Machine Learning Task</b> at <img src=index_files/kaggle.jpg alt="kaggle machine learning competition logo" height=20 >  </a>
+<br>
+Essay: <a href=./other/peter-h-machine-learning-task.pdf > The Methylation Machine Learning Challenge </a>
+<br>
+<div class="abstract" style="display: none;">
+Data: DNA methylation profiles from 74 subjects; two profiles (visits) per subject.  <br>
+Each profile is a vector of features (floating point numbers).<br>
+For each subject there is 1 positive example (match) and 73 negative examples (mismatches).<br>
+Task: Match each patient's visit one profile with his/her visit two profile.<br>
+Evaluation: log-loss.
+<hr>
+</div>
+<br>
+<b>Bioinformatics Database Task</b><br>
+Writeup: <a href=./other/peter-h-bioinformatics-DB-task.pdf >
+Genes for synaptotagmin, proteins for neurotransmitter vesicle docking and fusion </a>
+</section>
+
+
+<section>
+<div class="showhide noselect" onclick="ToggleAbstracts(4);">show/hide abstracts</div>
+<h3>MSc Bioinformatics at Newcastle University, UK</h3>
+
+<b>Using Comparative Genomics and Virtual Screening for Antibiotic Drug Discovery</b>,<br>
+MSc Thesis, 2010. &nbsp; &nbsp;
+<a href=./pubs/peter-h-MSc-thesis-2010.pdf ><img src=./pubs/pdf_icon.png alt="pdf icon" ></a>
+&nbsp;&nbsp; <b><a class="specialLink" href=./pubs/bioinformatics-refs.html >References</a></b>&nbsp;&nbsp;
+<b><a class="specialLink" href=./msc/index.html> >>> project web site <<< </a></b>
+<br><br>
+<div class="abstract" style="display: none;">
+<b>Abstract:</b> Methods from comparative genomics, sequence analysis,
+and virtual screening were combined to predict new drug targets and the chemical compounds that bind most strongly
+to those targets. <br>
+Motivation:  The evolution and spread of antibiotic resistant
+pathogenic bacteria has been rapid and often lethal, while the pipeline for new antibiotics has
+remained virtually bone dry. We face an urgent need for new antibiotics and more cost effective
+methods to support drug discovery; greater efficiency may be achieved by prioritizing in vitro
+testing. <br>
+Results:
+This combination of methods provided a cost effective way to predict suitable drug targets,
+their active sites, and prioritize chemical compounds for in vitro testing of antimicrobial
+properties, especially in the light of domain expertise.
+<hr>
+</div>
+</section>
+
+
+<section>
+<div class="showhide noselect" onclick="ToggleAbstracts(5);">show/hide abstracts</div>
+<h3>Publications</h3>
+<b>Use of a newly developed multichannel broadband NIRS system to elucidate brain
+   oxygenation and cellular metabolism during paediatric epileptic seizures</b>,
+   Metabolites, 2022 (submitted).
+<br> 
+Authors: Katerina Vezyroglou, Peter Hebden, Isabel de Roever, Rachel Thornton, Subhabrata Mitra, 
+Alan Worley, Mariana Alves, Emma Dean, J. Helen Cross and Ilias Tachtsidis<br>
+<br>
+
+<b>A new multichannel broadband NIRS system for quantitative monitoring of brain hemodynamics and
+metabolism during seizures</b>,  Diffuse Optical Spectroscopy and Imaging,
+European Conferences on Biomedical Optics (ECBO), June 2019.
+<br> 
+Authors:Isabel De Roever, Aikaterini Vezyroglou, Peter Hebden, Gemma Bale,
+Helen Cross, Ilias Tachtsidis
+<br> <div class="abstract" style="display: none;">
+<b>Abstract:</b> We present a newly developed multichannel broadband NIRS (or bNIRS) system that 
+has the capacity to measure changes in light attenuation of 308 NIR wavelengths (610nm to 918nm) 
+simultaneously over 16 different brain locations. 
+To achieve this the instrument uses a lens based spectrometer with a
+front-illuminated CCD that has a sensor size of 26.8x26mm. This large CCD detector allows the
+simultaneous binning of 16 detector fibres. The software uses the UCLn algorithm to quantify the
+changes in oxy-, deoxy- haemoglobin concentration (HbO2, HHb) and cytochrome-c-oxidase  (oxCCO)
+simultaneously over 16 different brain locations with 1 second sampling rate. We demonstrate the use
+of the  instrument in quantifying brain tissue oxygenation and metabolic activity simultaneously
+with electrical changes as measured with EEG in children with seizures.
+<hr>
+</div>
+<br>
+
+<b>Self-Organization of Wireless Sensor Networks for Data-Centric Routing Using Bloom Filters</b>,
+PhD Thesis, University of Melbourne, 2009. &nbsp; &nbsp;
+<a href=./pubs/wsn-thesis-2009.pdf ><img src=./pubs/pdf_icon.png alt="pdf icon" ></a> &nbsp;&nbsp;
+<br><br>
+<div class="abstract" style="display: none;">
+<b>Abstract:</b> Wireless sensor networks are primarily composed of many resource constrained
+battery powered devices known as motes.  To meet useful quality of service
+guarantees, more energy efficient protocols for self-organization and communication
+are needed. First, we present Distributed Asynchronous Clustering in the context of
+homogeneous networks and show that it generates well separated cluster heads and
+energy efficient clusters. Second, we present Distributed Asynchronous Clustering in
+the context of heterogeneous networks and use its local feedback mechanism, which we
+call pre-emptive recruiting, to generate networks with small-world properties. Third,
+given such a self-organized network, we present Bloom Gradient Routing, which uses
+Bloom filters to suppress wasteful radio transmissions. Experimental data, generated
+by our network simulator, indicates that when the wireless sensor network is organized
+as a small-world and augmented with Bloom filters, not only do short paths exist but
+the network is able to use them to service queries and, therefore, both latency and
+the energy consumed by radio communication are reduced, and network lifetime is
+increased to a far greater extent than would be possible using comparable protocols
+described in the literature.
+<hr>
+</div>
+
+<b>Distributed Asynchronous Clustering for Self-Organisation of Wireless Sensor
+Networks</b>, International Journal of Information Processing (IJIP), March/April 2007.
+<a href=./pubs/dac-IJIP-2007.pdf ><img src=./pubs/pdf_icon.png alt="pdf icon" ></a> &nbsp;&nbsp;
+<br><br>
+<div class="abstract" style="display: none;">
+<b>Abstract:</b> This paper presents a fully distributed asynchronous
+clustering protocol for the self-organisation of a wireless sensor network into an infrastructure of
+well separated cluster heads that supports in-network processing, routing, and deployment. In this
+protocol, nodes volunteer asynchronously for cluster head duty and use a radio beacon to pre-
+emptively recruit members. Limited beacon range is used as the primary parameter for self-
+organisation. The resulting topology substantially reduces total transmission distance and the
+expected energy consumed by radio communication. To further extend network lifetime and capability,
+well separated cluster heads may be easily located and replaced by more powerful devices.
+<hr>
+</div>
+
+<b> Data-Centric Routing using Bloom Filters in Wireless Sensor Networks</b>,  Fourth
+International Conference on Intelligent Sensing and Information Processing (ICISIP),
+Bangalore, India, December 2006.
+<a href=./pubs/bgr-2006.pdf ><img src=./pubs/pdf_icon.png alt="pdf icon" ></a> &nbsp;&nbsp;
+<br> <br>
+<div class="abstract" style="display: none;">
+<b>Abstract:</b> This paper presents a paradigm for reducing communication costs in
+wireless sensor networks. The first component is our Distributed Asynchronous Clustering protocol
+(DAC), which self-organises the network into an infrastructure that supports in-network processing,
+routing, and deployment. The second component, and the focus of this paper, is a data-centric
+routing protocol where cluster heads build and maintain sets of Bloom filters to inform routing
+decisions and filter out unproductive messages. While other data-centric protocols use a flat
+topology and rely to some extent on flooding, our protocol exploits a two tier hierarchy to provide
+an adaptable, scalable, and intelligent routing service that is expected to reduce the number of
+transmissions and extend network lifetime.
+<hr>
+</div>
+
+</section>
+
+<br><br>
+
+<div id="text1"></div>
+
+<div id="text2"></div>
+
+<script type="text/javascript">
+var abstractsOn = new Array(document.getElementsByTagName("section").length);
+for(var i=0;i<abstractsOn.length;i++)
+  abstractsOn[i] = true;
+  // document.getElementById("text1").innerHTML = "Text added by JavaScript code="+i;
+
+function ToggleAbstracts(sec){
+    sec = sec-1;
+    abstractsOn[sec] = !abstractsOn[sec];
+    var val = abstractsOn[sec]? 'block' : 'none';
+    var nodes = document.getElementsByTagName("section")[sec].childNodes;
+    for (var i=0;i<nodes.length;i++)if(nodes[i].className == "abstract")
+        nodes[i].style.display = val;
+        // document.getElementById("text2").innerHTML = "<p>Text added by JavaScript code: sec="+sec + " " + i + " " + val; 
+}
+
+ToggleAbstracts(1);
+ToggleAbstracts(2);
+ToggleAbstracts(3);
+ToggleAbstracts(4);
+ToggleAbstracts(5);
+</script>
+
+</body></html>

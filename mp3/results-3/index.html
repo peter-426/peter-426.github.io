@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="./index_files/theme.css">
+</style>
+<title> Spike Sorting </title>
+</head>
+
+<body>
+<br>
+<a href=../index.html > Home: Mini Project 3 </a>	
+<br>
+
+<h1> Results 3 </h1>
+
+Using NN with 10 hidden nodes.
+
+<h2> The false positive problem (FP) </h2>
+
+<h3> Four classes of examples, class 5 is new </h3>
+
+Accuracy on the four classes: percent error: <b>73.6%</b>. <br>
+Note: <b>y axis scales vary</b> to better show waveform shapes,<br>
+mean amplitudes in each row may be very different.<br>
+<br>
+The NN is confused by classes 2 and 3 (rows 2 and 3) because their<br>
+waveforms are similar, and because the NN has seen about the same <br>
+number of each (spike counts are similar).
+<br><br>
+The NN was not trained or tested on the 105 class 5 (row 5) waveforms <br> 
+at this point.
+<br>
+<img src=./class-1-4-NN.jpg > 
+<img src=./class-1-4-confusion.jpg >
+<img src=./class-1-4-imagesc.jpg >
+<br><br>
+<h3> Test the NN on the 105 new class 5 waveforms. </h3>
+The FP rate with threshold p >= 0.90 for class 5 waveforms was 1.0. <br>
+The NN fails on this task because it classifies the new spike waveforms <br>
+as members one of the four known classes based on similarity even if the <br>
+most similar class is not very similar at all.   In fact, a test input of<br>
+all zeros might be classified with a p >= 0.90. <br>
+
+<img src=./class-5-imagesc.jpg > <img src=./class-5-hist.jpg >  <br>
+
+<br><br><br><br>
+</body>
+
+</html>

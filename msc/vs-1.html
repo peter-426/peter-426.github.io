@@ -1,0 +1,65 @@
+<html><head>
+
+  <title>Virtual Screening: predicted sites </title>
+
+  <link rel="stylesheet" type="text/css" href="index/style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body>
+
+<div name="outercontent">
+
+<a name="content"></a>
+
+<div class="content">
+
+
+<table>
+<td COLSPAN=2>
+Ligands tend to bind near known active sites and/or conserved residues.
+<p>
+For each protein, the top scoring ligands docked close to very highly conserved residues (red).
+However, the search space used by <a href=http://vina.scripps.edu>Vina</a> was limited and 
+centered 
+on the most highly conserved region.
+To validate these results, we also used Vina to dock a set of ligands in a search space centered 
+on an area
+characterized by low conservation.  These <a href=vs/vs-4.html > results </a> were somewhat suprising.
+</td>
+<tr>
+<td> <img width=400 alt="   protein with  " src="graphics/vs/ftsZ-top-ligand.png">  </td>
+<td> <img width=400 alt="   protein with "  src="graphics/vs/coaD-top-ligand.png">  </td> 
+<tr>
+<th align=left>(a) FtsZ: -12.1 kcal/mol </th> 
+<th align=left>(b) CoaD: -10.2 kcal/mol </th>  
+<tr>
+
+<td> <img width=400 alt="   protein with "  src="graphics/vs/ywtF-top-ligand.png">  </td>
+<td> <img width=400 alt="   protein with "  src="graphics/vs/racE-top-ligand.png">  </td> 
+<tr>
+<th align=left>(c) YwtF: -9.1 kcal/mol</th> 
+<th align=left>(d) RacE: -7.7 kcal/mol</th>  
+<tr>
+</table>
+
+</div>
+
+<!-- banner of head links -->
+<div class="banner">
+  <div class="banner-text">
+     Virtual Screening: predicted sites
+  </div>
+  <div class="banner-image">
+	        
+  </div>
+</div>
+
+
+<!-- menu starts here -->
+<?php include("menu.htm"); ?> 
+
+<!-- menu ends here -->
+
+
+</body></html>
