@@ -1,7 +1,5 @@
 <html><head>
-
   <title> Research Summary </title>
-
   <link rel="stylesheet" type="text/css" href="index/style.css">
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
@@ -9,14 +7,13 @@
 <body>
 
 <div name="outercontent">
-
 <a name="content"></a>
-
 <div class="content">
 
 This is a quick summary of the two main parts of our current research.
 <p>
-<b> Comparative Genomics:</b>  We compared <a href=bsub.html > 123 cell wall associated  proteins</a> from <i>Bacillus subtilis</i> 
+<b> Comparative Genomics:</b>  
+I compared <a href=bsub.html > 123 cell wall associated  proteins</a> from <i>Bacillus subtilis</i> 
 with proteins in  <a href=proteomes.html >60 complete proteomes</a> of a diverse collection of bacteria, 
 including Gram positive and Gram negative species. 
 Similar proteins found in many species of bacteria may be suitable targets for broad spectrum antibiotic drugs.
@@ -30,9 +27,9 @@ The cell wall is an esential structure for virtually all bacteria as it protects
 it is the target of our best antibiotics (Leaver <i>et al.</i>, 2009). 
 <p>
 Given the importance of the cell wall to most bacteria and the lack of a cell wall in human cells, 
-we have focussed our research efforts on cell wall proteins.  However, the cell
+I focussed my research efforts on cell wall proteins.  However, the cell
 wall is quite complex and there are over 100 cell wall associated proteins in <i>B. subtilis</i>.
-Starting with this well known model organism, we compared 123 <i>B. subtilis</i> cell wall protein sequences 
+Starting with this well known model organism, I compared 123 <i>B. subtilis</i> cell wall protein sequences 
 with proteins in 60 species of bacteria (selected for diversity and pathogenicity).
 <p>
 
@@ -46,7 +43,7 @@ to the protein)(Lesk, 2008).  As a result, sequence analysis and predictions bas
 certainty.  Nonetheless, using 
 <a href=http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastHome>BLAST</a> (Altschul <i>et al.</i>, 1997)
 for pairwise sequence alignment and the <a href=http://www.pdb.org>Protein Data Bank</a> for 3D structure information,
-we generated the following <a href=blast.html table </a> and selected four proteins that are broadly conserved and have a known 3D structure.  
+I generated the following <a href=blast.html table </a> and selected four proteins that are broadly conserved and have a known 3D structure.  
 </td>
 <td>
 <table border=2 
@@ -65,7 +62,7 @@ The BLAST results <a href=blast.html>  table </a> only includes hits where
 a 3D structure is currently available.  Sequence comparison results for all <i>B. subtilis</i> proteins
 with a similar protein in at least 10 of the 60 proteomes may be found <a href=all.html >here</a>.
 <p>
-<b>Virtual screening:</b>  We downloaded the 
+<b>Virtual screening:</b>  I downloaded the 
 <a href=http://zinc.docking.org/vendor0/index_meta.shtml >Natural Products Data </a>
 set (NPD) (about 90,000 ligands) from the <a href=http://zinc.docking.org/ >ZINC</a>  online database (Irwin and Shoichet, 2005).
 ZINC contains over 13 million purchasable compounds represented by text files that include 3D coordinates 
@@ -74,9 +71,9 @@ cost effective way to virtually screen vast numbers of ligands and eliminate tho
 from further consideration..
 <p>
 However, virtual screening is computationally intensive and screening even 100,000 would take too
-long on an ordinary PC.  So we used <i>cisbclust</i> at <a href=http://www.ncl.ac.uk/cisban > CISBAN, Newcastle University </a>.  
+long on an ordinary PC.  So I used <i>cisbclust</i> at <a href=http://www.ncl.ac.uk/cisban > CISBAN, Newcastle University </a>.  
 Access to this cluster's  88 processors is managed by software known as <a href=http://www.cs.wisc.edu/condor/ >CONDOR</a> (Thain <i>et al.</i>, 2005).   
-We used Perl scripts,  <a href=condor.html >  mk.pl, dock.pm, go.pl </a>, to automate the submission of thousands of batch jobs 
+I used Perl scripts,  <a href=condor.html >  mk.pl, dock.pm, go.pl </a>, to automate the submission of thousands of batch jobs 
 to cisbclust via CONDOR.  This allowed us to dock about 100,000 ligands with our four proteins using AutoDock Vina (Trott and Olson, 2010) 
 within a small fraction of the time that would be required by one PC.
 <p>
@@ -90,6 +87,7 @@ has purchased the NPD chemical compounds with the greatest probability of succes
 In theory at least, our research has provided a rational and principled basis for prioritizing relatively 
 expensive wet lab experiments at virtually no cost per chemical compound (ligand) considered.
 </td>
+<tr>
 <td>  <img src=graphics/vs/npd-scores.png > </td>
 </table>
 </p>
