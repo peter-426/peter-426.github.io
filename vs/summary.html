@@ -41,18 +41,22 @@ big differences in structure and, even more confusingly,  very different sequenc
 that have the same function because they have the same <i>active site</i> (the place where other molecules bind 
 to the protein)(Lesk, 2008).  As a result, sequence analysis and predictions based on genomic data is often more about probability than
 certainty.  Nonetheless, using 
-<a href=http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastHome>BLAST</a> (Altschul <i>et al.</i>, 1997)
-for pairwise sequence alignment and the <a href=http://www.pdb.org>Protein Data Bank</a> for 3D structure information,
+<a href=https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastHome target=_top  >BLAST</a> (Altschul <i>et al.</i>, 1997)
+for pairwise sequence alignment and the <a href=https://www.pdb.org  target=_top  >Protein Data Bank</a> for 3D structure information,
 I generated the following <a href=blast.html table </a> and selected four proteins that are broadly conserved and have a known 3D structure.  
 </td>
 <td>
 <table border=2 
 <th colspan=3> Four Proteins </th> <tr>
 <th>Gene name</th>  <th> UniProt #</th>   <th>PDB ID</th> <tr>
-<td> <i>ftsZ</i> </td>  <td> <a href=http://www.uniprot.org/uniprot/P17865 >P17865</a> </td>   <td> <a href=http://www.rcsb.org/pdb/explore/explore.do?structureId=2VXY >2VXY</a> </td> <tr>
-<td> <i>coaD</i> </td>  <td> <a href=http://www.uniprot.org/uniprot/O34797 >O34797</a> </td>   <td> <a href=http://www.rcsb.org/pdb/explore/explore.do?structureId=1O6B >1O6B</a> </td> <tr> 
-<td> <i>ywtF</i> </td>  <td> <a href=http://www.uniprot.org/uniprot/Q7WY78 >Q7WY78</a> </td>   <td> <a href=http://www.rcsb.org/pdb/explore/explore.do?structureId=3MEJ >3MEJ</a> </td> <tr>  
-<td> <i>racE</i> </td>  <td> <a href=http://www.uniprot.org/uniprot/P94556 >P94556</a> </td>   <td> <a href=http://www.rcsb.org/pdb/explore/explore.do?structureId=1ZUW >1ZUW</a> </td>
+<td> <i>ftsZ</i> </td>  <td> <a href=https://www.uniprot.org/uniprot/P17865  target=_top >P17865</a> </td>   
+<td> <a href=https://www.rcsb.org/pdb/explore/explore.do?structureId=2VXY  target=_top  >2VXY</a> </td> <tr>
+<td> <i>coaD</i> </td>  <td> <a href=https://www.uniprot.org/uniprot/O34797  target=_top >O34797</a> </td>   
+<td> <a href=https://www.rcsb.org/pdb/explore/explore.do?structureId=1O6B  target=_top  >1O6B</a> </td> <tr> 
+<td> <i>ywtF</i> </td>  <td> <a href=https://www.uniprot.org/uniprot/Q7WY78  target=_top >Q7WY78</a> </td>   
+<td> <a href=https://www.rcsb.org/pdb/explore/explore.do?structureId=3MEJ  target=_top  >3MEJ</a> </td> <tr>  
+<td> <i>racE</i> </td>  <td> <a href=https://www.uniprot.org/uniprot/P94556  target=_top >P94556</a> </td>   
+<td> <a href=https://www.rcsb.org/pdb/explore/explore.do?structureId=1ZUW  target=_top  >1ZUW</a> </td>
 </table>
 </td>
 <table>
@@ -63,26 +67,26 @@ a 3D structure is currently available.  Sequence comparison results for all <i>B
 with a similar protein in at least 10 of the 60 proteomes may be found <a href=all.html >here</a>.
 <p>
 <b>Virtual screening:</b>  I downloaded the 
-<a href=http://zinc.docking.org/vendor0/index_meta.shtml >Natural Products Data </a>
-set (NPD) (about 90,000 ligands) from the <a href=http://zinc.docking.org/ >ZINC</a>  online database (Irwin and Shoichet, 2005).
+<a href=https://zinc.docking.org/ target=_top  >Natural Products Data </a>
+set (NPD) (about 90,000 ligands) from the <a href=https://zinc.docking.org/  target=_top  >ZINC</a>  online database (Irwin and Shoichet, 2005).
 ZINC contains over 13 million purchasable compounds represented by text files that include 3D coordinates 
 in a format well suited to "docking" ligands with proteins (<i>in silico</i>).  This is an extremely 
 cost effective way to virtually screen vast numbers of ligands and eliminate those with no drug potential
 from further consideration..
 <p>
 However, virtual screening is computationally intensive and screening even 100,000 would take too
-long on an ordinary PC.  So I used <i>cisbclust</i> at <a href=http://www.ncl.ac.uk/cisban > CISBAN, Newcastle University </a>.  
-Access to this cluster's  88 processors is managed by software known as <a href=http://www.cs.wisc.edu/condor/ >CONDOR</a> (Thain <i>et al.</i>, 2005).   
+long on an ordinary PC.  So I used the CISBAN computing cluster at Newcatsle.   At the time, access to this cluster's 
+88 processors were managed by software known as <a href=https://www.cs.wisc.edu/condor/  target=_top  >CONDOR</a> (Thain <i>et al.</i>, 2005).   
 I used Perl scripts,  <a href=condor.html >  mk.pl, dock.pm, go.pl </a>, to automate the submission of thousands of batch jobs 
 to cisbclust via CONDOR.  This allowed us to dock about 100,000 ligands with our four proteins using AutoDock Vina (Trott and Olson, 2010) 
-within a small fraction of the time that would be required by one PC.
+within a small fraction of the time that would have been required by one PC.
 <p>
 <table>
 <td> <b>Results: </b> The <a href=docking-stats.html > docking scores for NPD ligands</a> from the ZINC database bind best with FtsZ,  
 with CoaD coming in second place.   This chart shows the worst (max), the average (mean), and the 
 best (min) binding score for each protein.  These scores are in 
-<a http://en.wikipedia.org/wiki/Kilocalorie_per_mole > kcal/mol </a> and, as odd as this may 
-sound, the more negative the better.   Based on the work completed so far, <a href=http://www.demuris.co.uk >Demuris Ltd.</a> 
+<a https://en.wikipedia.org/wiki/Kilocalorie_per_mole  target=_top  > kcal/mol </a> and, as odd as this may 
+sound, the more negative the better.   Based on the work completed so far, <a href=https://www.demuris.co.uk  target=_top  >Demuris Ltd.</a> 
 has purchased the NPD chemical compounds with the greatest probability of success for <i>in vitro</i> testing.  
 In theory at least, our research has provided a rational and principled basis for prioritizing relatively 
 expensive wet lab experiments at virtually no cost per chemical compound (ligand) considered.
